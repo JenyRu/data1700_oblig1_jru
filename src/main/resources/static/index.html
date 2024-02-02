@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="js.js">onload(print())</script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Bestilling av kinobiletter</h1>
+<p>Velg film:
+    <select id="movieSelector" onchange="choose();">
+        <option disabled selected hidden>Velg film her</option>
+        <option>Baman Piderman: The Movie</option>
+        <option>Salad Fingers Rusty Spoon</option>
+        <option>Dog of Wisdom on Cloud Nine</option>
+    </select>
+</p>
+<p>Antall
+    <input type=number style="width: 3em" min="0" max="99" id="amount">
+</p>
+<br>
+<form method="post" onsubmit="ticket()">
+    <table>
+        <tr>
+            <td>Fornavn</td>
+            <td><input type="text" id="firstName" required></td>
+        </tr>
+        <tr>
+            <td>Etternavn</td>
+            <td><input type="text" id="lastName"></td>
+        </tr>
+        <tr>
+            <td>Telefonnr</td>
+            <td><input type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required id="phoneNr"></td>
+        </tr>
+        <!-- Denne typen validerer input selv -->
+        <tr>
+            <td>Epost</td>
+            <td><input type="email" id="email"></td>
+        </tr>
+    </table>
+    <input type="submit">
+</form>
+<button onclick="ticket()">Kjøp bilett</button>
+<h2>Alle biletter</h2>
+<div></div>
+<button onclick="del()">Slett alle bilettene</button>
+<script>(window.onload(print))</script>
+</body>
+</html>
