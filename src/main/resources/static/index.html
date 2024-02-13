@@ -1,50 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="js.js">onload(print())</script>
+    <script src="js.js"></script>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Ticket oblig 1</title>
 </head>
 <body>
-<h1>Bestilling av kinobiletter</h1>
-<p>Velg film:
-    <select id="movieSelector" onchange="choose();">
-        <option disabled selected hidden>Velg film her</option>
-        <option>Baman Piderman: The Movie</option>
-        <option>Salad Fingers Rusty Spoon</option>
-        <option>Dog of Wisdom on Cloud Nine</option>
-    </select>
-</p>
-<p>Antall
-    <input type=number style="width: 3em" min="0" max="99" id="amount">
-</p>
-<br>
-<form method="post" onsubmit="ticket()">
-    <table>
+<h1>Order movie tickets</h1>
+<form method="post" name="ticketForm" onsubmit="saveTicket(); return false;">
+    <p>
+        <label for="movieSelector">Choose movie:</label>
+        <select id="movieSelector" required>
+            <option value='' disabled selected hidden>Click to see movie options</option>
+            <option>Baman Piderman: The Movie</option>
+            <option>Salad Fingers Rusty Spoon</option>
+            <option>Dog of Wisdom on Cloud Nine</option>
+        </select>
+    </p>
+    <p>
+        <label for="amount">Ticket amount:</label>
+        <input type=number id="amount" style="width: 3em" min="1" max="99" required>
+    </p>
+    <table cellspacing="2" cellpadding="2" border="1">
+        <!--Automatic HTML form validation can be performed by the with the required attribute -->
         <tr>
-            <td>Fornavn</td>
-            <td><input type="text" id="firstName" required></td>
+            <td>First name</td>
+            <td><label for="firstName"></label><input type="text" id="firstName" name="fName" required></td>
         </tr>
         <tr>
-            <td>Etternavn</td>
-            <td><input type="text" id="lastName"></td>
+            <td>Last name</td>
+            <td><input type="text" id="lastName" name="lName" required></td>
         </tr>
         <tr>
-            <td>Telefonnr</td>
-            <td><input type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required id="phoneNr"></td>
+            <!--The pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" was slightly annoying in my
+             opinion, so I changed it to "[0-9]{8}"-->
+            <td>Phone</td>
+            <td><input type="tel" pattern="[0-9]{8}" id="phoneNr" name="phoneNr" required></td>
         </tr>
-        <!-- Denne typen validerer input selv -->
+        <!-- Type="email" validates itself to require @-->
         <tr>
-            <td>Epost</td>
-            <td><input type="email" id="email"></td>
+            <td>Email</td>
+            <td><input type="email" required id="email" name="email"></td>
+            <!-- required="text"<output> HHHHHHHHHH </output> -->
         </tr>
     </table>
-    <input type="submit">
+    <!--    <input type="submit"> REMOVE???-->
+    <button type="submit" onclick="saveTicket()">Buy ticket(s)</button>
 </form>
-<button onclick="ticket()">Kjøp bilett</button>
-<h2>Alle biletter</h2>
-<div></div>
-<button onclick="del()">Slett alle bilettene</button>
-<script>(window.onload(print))</script>
+
+<h2>Current ticket(s)</h2>
+<br>
+<!-- Adding the array table -->
+<div id="inputResult"></div>
+<button onclick="deleteTickets()">Delete current tickets</button>
+<script> printTickets() </script>
 </body>
 </html>
