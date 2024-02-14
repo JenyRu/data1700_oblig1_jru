@@ -8,10 +8,10 @@ function saveTicket() {
     let inputPhoneNr = document.getElementById("phoneNr").value;
     let inputEmail = document.getElementById("email").value;
 
-    //could be in html, might remove
+ /*   //could be in html, might remove
     <!--  The first and last name inputs are limited to alpha characters including spaces,
          æ, ø, å, commas, periods and hyphens. The i modifier at the end ignores case sensitivity.-->
-/*    function onlyLetters(inputFirstName, inputLastName) {
+        function onlyLetters(inputFirstName, inputLastName) {
         //This limits the name inputs to alpha characters including spaces, æ, ø, å,
         //commas, periods and hyphens. The i modifier at the end ignores case sensitivity.
         let letters = /^[a-z a-æøå,.-]+$/i;
