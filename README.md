@@ -1,15 +1,19 @@
-Oblig 2
+Oblig 1
 =======
-OsloMet brukernavn: jeudd6632
+OsloMet username: jeudd6632
 
-GitHub brukernavn: JenyRu
+GitHub username: JenyRu
 
-Github repo URL: https://github.com/data1700-v23/oblig-1-JenyRu
+GitHub repo URL: https://github.com/JenyRu/data1700_oblig1_jru.git
 
-Fullt navn: Jenny Ramnefjell Uddal
+Full name: Jenny Ramnefjell Uddal
 
-Kort beskrivelse av applikasjon (5-10 setninger):
-En JavaScript-applikasjon som registrerer kjøp av kinobilletter.
-Jeg la inn 3 imaginære filmalternativ og 5 inputbokser for antall billetter, fornavn, etternavn, telefonnummer og epost. 
-Etter disse har blitt validert kan "Kjøp billett"-knappen trykkes på og alle billettene blir lagt inn og vist i et array. 
-"Slett alle billettene"-knappen kan tømme arrayet.
+Short description of application:
+A JavaScript and HTML application that registers movie ticket orders.
+I added three imaginary movie alternatives and five input boxes for 
+ticket amount, first name, last name, phone number and email. 
+The "Buy Ticket"-button can only be clicked if the input is validated. 
+When the form is submitted successfully the input are sent as objects 
+to an array and displayed under "Current Tickets". This will simultaneously 
+reset the input field. Lastly the "Delete Current Tickets"-button will 
+empty the array when clicked.
