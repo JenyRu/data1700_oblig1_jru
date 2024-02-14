@@ -9,9 +9,9 @@
 <h1>Order movie tickets</h1>
 <form method="post" name="ticketForm" onsubmit="saveTicket(); return false;">
     <p>
-        <label for="movieSelector">Choose movie:</label>
+        Choose movie:
         <select id="movieSelector" required>
-            <option value='' disabled selected hidden>Click to see movie options</option>
+            <option value="" disabled selected >Click to see movie options</option>
             <option>Baman Piderman: The Movie</option>
             <option>Salad Fingers Rusty Spoon</option>
             <option>Dog of Wisdom on Cloud Nine</option>
@@ -25,7 +25,7 @@
         <!--Automatic HTML form validation can be performed by the with the required attribute -->
         <tr>
             <td>First name</td>
-            <td><label for="firstName"></label><input type="text" id="firstName" name="fName" required></td>
+            <td><input type="text" id="firstName" name="fName" required></td>
         </tr>
         <tr>
             <td>Last name</td>
@@ -45,7 +45,7 @@
         </tr>
     </table>
     <!--    <input type="submit"> REMOVE???-->
-    <button type="submit" onclick="saveTicket()">Buy ticket(s)</button>
+    <button type="submit">Buy ticket(s)</button>
 </form>
 
 <h2>Current ticket(s)</h2>
