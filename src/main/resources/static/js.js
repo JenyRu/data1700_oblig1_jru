@@ -7,16 +7,9 @@ function saveTicket() {
     let inputLastName = document.getElementById("lastName").value;
     let inputPhoneNr = document.getElementById("phoneNr").value;
     let inputEmail = document.getElementById("email").value;
-    //Validating the movieSelector input
-       if (inputMovie === "") {
 
-            return;
-        }
     //Collecting all the inputs
     let inputResults = {
-
-        //Use : instead of = to make code more compact and easy to read.
-
         "movieSelector": inputMovie,
         "amount": inputAmount,
         "firstName": inputFirstName,
@@ -29,7 +22,7 @@ function saveTicket() {
     console.log(inputResults)
     printTickets(inputResults);
     //This resets all the input fields
-    document.getElementById("movieSelector").value = 'Click to see movie options';
+    document.getElementById("movieSelector").value = '';
     document.getElementById("amount").value = '';
     document.getElementById("firstName").value = '';
     document.getElementById("lastName").value = '';
