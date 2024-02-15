@@ -8,19 +8,6 @@ function saveTicket() {
     let inputPhoneNr = document.getElementById("phoneNr").value;
     let inputEmail = document.getElementById("email").value;
 
- /*   //could be in html, might remove
-    <!--  The first and last name inputs are limited to alpha characters including spaces,
-         æ, ø, å, commas, periods and hyphens. The i modifier at the end ignores case sensitivity.-->
-        function onlyLetters(inputFirstName, inputLastName) {
-        //This limits the name inputs to alpha characters including spaces, æ, ø, å,
-        //commas, periods and hyphens. The i modifier at the end ignores case sensitivity.
-        let letters = /^[a-z a-æøå,.-]+$/i;
-        if(inputFirstName.value.match(letters)) {
-        }
-        if(inputLastName.value.match(letters)) {
-           return true;
-        }
-    }*/
     //Collecting all the inputs
     let inputResults = {
         "movieSelector": inputMovie,
@@ -42,6 +29,7 @@ function saveTicket() {
     document.getElementById("phoneNr").value = '';
     document.getElementById("email").value = '';
 }
+
 function printTickets() {
     //Using the same table attributes from html for a cohesive look.
     let out = "<table cellspacing='2' cellpadding='2' border='1'<tr> <th>Movie</th> <th>Amount</th> <th>First name</th>" +
@@ -55,8 +43,9 @@ function printTickets() {
     }
     document.getElementById("inputResult").innerHTML = out;
 }
+
 function deleteTickets() {
-    //The current tickets are removed and the array is emptied
+    //The current tickets are removed and the array is empty
     ticketArray = [];
     printTickets();
 }
